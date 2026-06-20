@@ -1,0 +1,4 @@
+dist/
+*.html
+!index.html
+.claude/

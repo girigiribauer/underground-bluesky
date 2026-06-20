@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地下ブルースカイ</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #09070a;
+    color: #c8b89a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #e8c87a;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: #d0a860;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  .desc {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #c89868;
+    margin-bottom: 2.5rem;
+  }
+
+  .desc p + p {
+    margin-top: 0.75rem;
+  }
+
+  .bookmarklet-wrap {
+    margin-bottom: 2rem;
+  }
+
+  a#bm-link {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(145deg, #3a1a1a, #1a0808);
+    border: 2px solid #8a2020;
+    border-radius: 8px;
+    color: #ffb8a0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: grab;
+    box-shadow: 0 4px 15px rgba(138, 32, 32, 0.4), inset 0 2px 2px rgba(255, 100, 100, 0.2);
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  a#bm-link:hover {
+    background: linear-gradient(145deg, #4a2020, #2a0b0b);
+    border-color: #a03030;
+    box-shadow: 0 6px 20px rgba(138, 32, 32, 0.6), inset 0 2px 2px rgba(255, 100, 100, 0.3);
+    transform: translateY(-2px);
+  }
+
+  a#bm-link:active {
+    cursor: grabbing;
+    box-shadow: 0 1px 5px rgba(138, 32, 32, 0.5), inset 0 3px 6px rgba(0, 0, 0, 0.6);
+    transform: translateY(2px);
+  }
+
+  a#bm-link span + span {
+    margin-left: 0.5rem;
+  }
+
+  .how-to {
+    font-size: 0.82rem;
+    color: #b87850;
+    line-height: 1.6;
+  }
+
+  .how-to strong {
+    color: #c88050;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #1e150a;
+    margin: 2.5rem 0;
+  }
+
+  footer {
+    font-size: 0.78rem;
+    color: #3a2a18;
+  }
+
+  footer a {
+    color: #5a4020;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: #8a6030;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>地下ブルースカイ</h1>
+  <p class="subtitle">Underground Bluesky</p>
+
+  <div class="desc" style="margin-bottom: 2.5rem;">
+    <p>Bluesky の床が抜けて「地下ブルースカイ」へ落とされます。<br>
+    そこでは、謎の棒をぐるぐる回す強制労働が待ち受けています。<br>
+    回し続けると他のユーザーたちも次々と巻き込まれていきます。</p>
+  </div>
+
+  <hr class="divider" style="margin: 2.5rem 0;">
+
+  <div class="how-to" style="margin-bottom: 2.5rem;">
+    <strong>【遊び方】</strong>
+    <ol style="margin-top: 0.5rem; padding-left: 1.5rem; line-height: 1.8; text-align: left; display: inline-block;">
+      <li>下のボタンをブラウザの「ブックマークバー」にドラッグ＆ドロップします。</li>
+      <li style="margin-top: 0.5rem;">Bluesky のタイムラインを開き、いま登録したブックマークをクリックします。</li>
+    </ol>
+  </div>
+
+  <div class="bookmarklet-wrap">
+    <a id="bm-link" href="javascript:(function()%7Bif(window.location.hostname!%3D%3D'bsky.app')%7Balert('%E5%9C%B0%E4%B8%8B%E3%83%96%E3%83%AB%E3%83%BC%E3%82%B9%E3%82%AB%E3%82%A4%E3%81%AE%E5%85%A5%E3%82%8A%E5%8F%A3%E3%81%AF%20Bluesky(bsky.app)%E3%81%AB%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99')%3Breturn%3B%7Dvar%20hasTimeline%3D!!document.querySelector('%5Bdata-testid%5E%3D%22feedItem-%22%5D%2C%5Bdata-testid%3D%22postThreadItem%22%5D%2C%5Bdata-testid*%3D%22notification%22%5D%2C%5Bdata-testid%3D%22searchScreen%22%5D')%3Bif(!hasTimeline)%7Balert('%E3%81%93%E3%81%AE%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AB%E3%81%AF%E5%9C%B0%E4%B8%8B%E3%83%96%E3%83%AB%E3%83%BC%E3%82%B9%E3%82%AB%E3%82%A4%E3%81%AE%E5%85%A5%E3%82%8A%E5%8F%A3%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82%5Cn%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%8C%E4%B8%A6%E3%82%93%E3%81%A7%E3%81%84%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%A7%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%BF%E3%81%A6%E3%81%AD')%3Breturn%3B%7Dvar%20KEY%3D'__chikaBS7__'%3Bif(window%5BKEY%5D)%7Bwindow%5BKEY%5D()%3Bwindow%5BKEY%5D%3Dnull%3Breturn%3B%7Dvar%20ROT_DEG%3D2%2CMOVE_MS%3D160%2CPAUSE_MS%3D1200%3Bvar%20ROT_RAD%3DROT_DEG*Math.PI%2F180%3Bvar%20ARM_COUNT%3D10%3Bvar%20svgFilter%3Dnull%2CmaskEl%3Dnull%3Bvar%20rootEl%3Dnull%3Bvar%20origTransition%3D''%2CorigTransform%3D''%2CorigFilter%3D''%2CorigTransformOrigin%3D''%2CorigOpacity%3D''%2CorigDisplay%3D''%2CorigVisibility%3D''%3Bvar%20isIntroFinished%3Dfalse%3Bvar%20fixedEls%3D%5B%5D%3Bfunction%20freezeFixedElements()%7Bif(!rootEl)return%3Bvar%20rootRect%3DrootEl.getBoundingClientRect()%3Bvar%20allEls%3DrootEl.getElementsByTagName('*')%3Bfor(var%20i%3D0%3Bi%3CallEls.length%3Bi%2B%2B)%7Bvar%20el%3DallEls%5Bi%5D%3Bvar%20comp%3Dwindow.getComputedStyle(el)%3Bif(comp.position%3D%3D%3D'fixed')%7Bvar%20rect%3Del.getBoundingClientRect()%3BfixedEls.push(%7Bel%3Ael%2CorigTransition%3Ael.style.transition%2CorigTop%3Ael.style.top%2CorigBottom%3Ael.style.bottom%2CorigLeft%3Ael.style.left%2CorigRight%3Ael.style.right%2CorigWidth%3Ael.style.width%2CorigHeight%3Ael.style.height%2CorigMargin%3Ael.style.margin%2CorigTransform%3Ael.style.transform%2CorigBoxSizing%3Ael.style.boxSizing%2Crect%3Arect%7D)%3B%7D%7Dfor(var%20j%3D0%3Bj%3CfixedEls.length%3Bj%2B%2B)%7Bvar%20item%3DfixedEls%5Bj%5D%3Bvar%20e%3Ditem.el%3Be.style.transition%3D'none'%3Be.style.margin%3D'0px'%3Be.style.transform%3D'none'%3Be.style.boxSizing%3D'border-box'%3Be.style.top%3D(item.rect.top-rootRect.top)%2B'px'%3Be.style.left%3D(item.rect.left-rootRect.left)%2B'px'%3Be.style.width%3Ditem.rect.width%2B'px'%3Be.style.height%3Ditem.rect.height%2B'px'%3Be.style.bottom%3D'auto'%3Be.style.right%3D'auto'%3B%7D%7Dfunction%20unfreezeFixedElements()%7Bfor(var%20j%3D0%3Bj%3CfixedEls.length%3Bj%2B%2B)%7Bvar%20item%3DfixedEls%5Bj%5D%3Bvar%20e%3Ditem.el%3Be.style.transition%3Ditem.origTransition%3Be.style.top%3Ditem.origTop%3Be.style.bottom%3Ditem.origBottom%3Be.style.left%3Ditem.origLeft%3Be.style.right%3Ditem.origRight%3Be.style.width%3Ditem.origWidth%3Be.style.height%3Ditem.origHeight%3Be.style.margin%3Ditem.origMargin%3Be.style.transform%3Ditem.origTransform%3Be.style.boxSizing%3Ditem.origBoxSizing%3B%7DfixedEls%3D%5B%5D%3B%7Dfunction%20easeInQuad(t)%7Breturn%20t*t%3B%7Dfunction%20easeOutCubic(t)%7Breturn%201-Math.pow(1-t%2C3)%3B%7Dfunction%20getSelfAvatar()%7Bvar%20el%3Ddocument.querySelector('nav%20a%5Bhref%5E%3D%22%2Fprofile%2F%22%5D%20%5Bdata-testid%3D%22userAvatarImage%22%5D%20img')%7C%7Cdocument.querySelector('%5Brole%3D%22navigation%22%5D%20a%5Bhref%5E%3D%22%2Fprofile%2F%22%5D%20%5Bdata-testid%3D%22userAvatarImage%22%5D%20img')%7C%7Cdocument.querySelector('nav%20%5Bdata-testid%3D%22userAvatarImage%22%5D%20img')%7C%7Cdocument.querySelector('%5Brole%3D%22navigation%22%5D%20%5Bdata-testid%3D%22userAvatarImage%22%5D%20img')%7C%7Cdocument.querySelector('%5Bdata-testid%3D%22navProfileBtn%22%5D%20img')%7C%7Cdocument.querySelector('%5Bdata-testid%3D%22drawerBtn%22%5D%20%5Bdata-testid%3D%22userAvatarImage%22%5D%20img')%7C%7Cdocument.querySelector('%5Bdata-testid%3D%22drawerBtn%22%5D%20img')%3Bif(el%26%26el.src)return%20el.src%3Bvar%20allImgs%3Ddocument.querySelectorAll('a%5Bhref*%3D%22%2Fprofile%2F%22%5D%20%5Bdata-testid%3D%22userAvatarImage%22%5D%20img')%3Bfor(var%20i%3D0%3Bi%3CallImgs.length%3Bi%2B%2B)%7Bvar%20parent%3DallImgs%5Bi%5D.parentNode%3Bvar%20isTimeline%3Dfalse%3Bwhile(parent%26%26parent!%3D%3Ddocument.body)%7Bvar%20testId%3Dparent.getAttribute('data-testid')%3Bif(testId%26%26(testId.indexOf('feedItem')!%3D%3D-1%7C%7CtestId%3D%3D%3D'postThreadItem'))%7BisTimeline%3Dtrue%3Bbreak%3B%7Dparent%3Dparent.parentNode%3B%7Dif(!isTimeline%26%26allImgs%5Bi%5D.src)%7Breturn%20allImgs%5Bi%5D.src%3B%7D%7Dreturn%20null%3B%7Dfunction%20isTimelineAvatar(img)%7Bvar%20parent%3Dimg.parentNode%3Bvar%20isTimeline%3Dfalse%3Bwhile(parent%26%26parent!%3D%3Ddocument.body)%7Bvar%20testId%3Dparent.getAttribute('data-testid')%3Bif(testId)%7Bif(testId%3D%3D%3D'contentHider-post')%7Breturn%20false%3B%7Dif(testId.indexOf('feedItem-')%3D%3D%3D0%7C%7CtestId%3D%3D%3D'postThreadItem'%7C%7CtestId.indexOf('notification')!%3D%3D-1%7C%7CtestId%3D%3D%3D'searchScreen')%7BisTimeline%3Dtrue%3B%7D%7Dparent%3Dparent.parentNode%3B%7Dreturn%20isTimeline%3B%7Dvar%20seen%3Dnew%20Set()%2Cimgs%3Dnew%20Array(ARM_COUNT).fill(null)%3Bvar%20selfSrc%3Dnull%3Bfunction%20checkSelfAvatar()%7Bif(imgs%5B0%5D%7C%7CselfSrc)return%3BselfSrc%3DgetSelfAvatar()%3Bif(selfSrc)%7Bseen.add(selfSrc)%3Bvar%20selfImg%3Dnew%20Image()%3BselfImg.onload%3Dfunction()%7Bimgs%5B0%5D%3DselfImg%3B%7D%3BselfImg.src%3DselfSrc%3B%7D%7DcheckSelfAvatar()%3Bvar%20replaceIndex%3D1%3Bvar%20W%2CH%2CPANEL_W%2CPANEL_H%2CPX%2CPY%2CCX%2CAX_W%2CARM_LEN%2CYPERSP%2CPR%2CCY%2CGROUND_Y%3Bvar%20WL%2CfadeW%2CtlX%2CtrX%2CtorchY%2CfRY%2CfRX%2CaxisTopY%2CaxisBotY%2CcapstanScaleRef%3Bvar%20resizeTimeout%3Bfunction%20updateDimensions()%7BW%3Dwindow.innerWidth%3BH%3Dwindow.innerHeight%3BPANEL_W%3DW%3BPANEL_H%3DMath.round(H*0.45)%3BPX%3D0%3BPY%3DH-PANEL_H%3BCX%3DW%2F2%3BcapstanScaleRef%3DMath.min(W*0.8%2C800)%3BAX_W%3DMath.max(16%2CMath.round(capstanScaleRef*0.025))%3BARM_LEN%3DMath.min(Math.round(capstanScaleRef*0.26)%2C260)%3BYPERSP%3DMath.round(PANEL_H*0.15)%3BPR%3DMath.max(10%2CMath.round(PANEL_H*0.06))%3BCY%3DPY%2BMath.round(PANEL_H*0.72)%3BGROUND_Y%3DCY%2BMath.round(PR*1.2)%3BWL%3DMath.round(PANEL_W*0.16)%3BfadeW%3DMath.round(PANEL_W*0.07)%3BtlX%3DCX-Math.round(capstanScaleRef*0.35)%3BtrX%3DCX%2BMath.round(capstanScaleRef*0.35)%3BtorchY%3DGROUND_Y-Math.round(PANEL_H*0.48)%3BfRY%3DMath.max(10%2CMath.round(PANEL_H*0.055))%3BfRX%3DMath.max(6%2CMath.round(capstanScaleRef*0.012))%3BaxisTopY%3DPY%2BMath.round(PANEL_H*0.10)%3BaxisBotY%3DGROUND_Y%2BMath.round(PR*0.3)%3Bif(typeof%20canvas!%3D%3D'undefined'%26%26canvas)%7Bcanvas.width%3DW%3Bcanvas.height%3DH%3B%7Dif(typeof%20speedCanvas!%3D%3D'undefined'%26%26speedCanvas)%7BspeedCanvas.width%3DW%3BspeedCanvas.height%3DH%3B%7D%7Dfunction%20handleResize()%7Bif(resizeTimeout)clearTimeout(resizeTimeout)%3BresizeTimeout%3DsetTimeout(updateDimensions%2C150)%3B%7Dwindow.addEventListener('resize'%2ChandleResize)%3BupdateDimensions()%3BsvgFilter%3Ddocument.createElementNS('http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%2C'svg')%3BsvgFilter.setAttribute('width'%2C'0')%3BsvgFilter.setAttribute('height'%2C'0')%3BsvgFilter.style.cssText%3D'position%3Aabsolute%3Bpointer-events%3Anone%3Bleft%3A-9999px%3Btop%3A-9999px%3B'%3BsvgFilter.innerHTML%3D'%3Cdefs%3E'%2B'%3Cfilter%20id%3D%22chika-distort-filter%22%3E'%2B'%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.012%200.035%22%20numOctaves%3D%221%22%20result%3D%22noise%22%2F%3E'%2B'%3CfeDisplacementMap%20id%3D%22chika-displace-map%22%20in%3D%22SourceGraphic%22%20in2%3D%22noise%22%20scale%3D%220%22%20xChannelSelector%3D%22R%22%20yChannelSelector%3D%22G%22%20result%3D%22distorted%22%2F%3E'%2B'%3CfeGaussianBlur%20id%3D%22chika-blur-filter%22%20in%3D%22distorted%22%20stdDeviation%3D%220%22%2F%3E'%2B'%3C%2Ffilter%3E'%2B'%3C%2Fdefs%3E'%3Bdocument.body.appendChild(svgFilter)%3BmaskEl%3Ddocument.createElement('div')%3BmaskEl.style.cssText%3D'position%3Afixed%3Btop%3A0%3Bleft%3A0%3Bwidth%3A100vw%3Bheight%3A100vh%3Bpointer-events%3Anone%3Bz-index%3A999999%3B'%2B'background%3A%230a0604%3Bopacity%3A0%3B'%3Bdocument.body.appendChild(maskEl)%3Bvar%20canvas%3Ddocument.createElement('canvas')%3Bcanvas.width%3DW%3Bcanvas.height%3DH%3Bcanvas.style.cssText%3D'position%3Afixed%3Btop%3A0%3Bleft%3A0%3Bpointer-events%3Anone%3Bz-index%3A1000000%3Bdisplay%3Anone%3B'%3Bdocument.body.appendChild(canvas)%3Bvar%20ctx%3Dcanvas.getContext('2d')%3Bvar%20speedCanvas%3Ddocument.createElement('canvas')%3BspeedCanvas.width%3DW%3BspeedCanvas.height%3DH%3BspeedCanvas.style.cssText%3D'position%3Afixed%3Btop%3A0%3Bleft%3A0%3Bpointer-events%3Anone%3Bz-index%3A1000001%3Bdisplay%3Anone%3B'%3Bdocument.body.appendChild(speedCanvas)%3Bvar%20speedCtx%3DspeedCanvas.getContext('2d')%3BrootEl%3Ddocument.getElementById('root')%7C%7Cdocument.body.firstElementChild%3Bif(rootEl)%7BorigTransition%3DrootEl.style.transition%3BorigTransform%3DrootEl.style.transform%3BorigFilter%3DrootEl.style.filter%3BorigTransformOrigin%3DrootEl.style.transformOrigin%3BorigOpacity%3DrootEl.style.opacity%3BorigDisplay%3DrootEl.style.display%3BorigVisibility%3DrootEl.style.visibility%3B%7Dvar%20speedLines%3D%5B%5D%3Bvar%20LINE_COUNT%3D35%3Bfor(var%20i%3D0%3Bi%3CLINE_COUNT%3Bi%2B%2B)%7BspeedLines.push(%7Bx%3AMath.random()*W%2Cy%3AMath.random()*H%2Clen%3A50%2BMath.random()*100%2Cspeed%3A20%2BMath.random()*20%7D)%3B%7Dvar%20phaseTriggered%3D%7Bp1%3Afalse%2Cp2%3Afalse%2Cp3%3Afalse%2Cp4%3Afalse%2Cfinished%3Afalse%7D%3Bfunction%20drawSpeedLines(progress%2CopacityLimit)%7BspeedCtx.clearRect(0%2C0%2CW%2CH)%3Bvar%20speedMult%3DMath.sin(progress*Math.PI)%3Bvar%20opacityMult%3DspeedMult*opacityLimit%3BspeedCtx.strokeStyle%3D'rgba(230%2C220%2C190%2C'%2B(0.35*opacityMult)%2B')'%3BspeedCtx.lineWidth%3D1.5%3BspeedCtx.beginPath()%3BspeedLines.forEach(function(line)%7BspeedCtx.moveTo(line.x%2Cline.y)%3BspeedCtx.lineTo(line.x%2Cline.y%2Bline.len*speedMult)%3Bline.y-%3Dline.speed*speedMult%3Bif(line.y%3C-line.len)%7Bline.y%3DH%3Bline.x%3DMath.random()*W%3B%7D%7D)%3BspeedCtx.stroke()%3B%7Dvar%20stalPts%3D%5B0.14%2C0.24%2C0.38%2C0.52%2C0.64%2C0.76%2C0.86%5D%3Bvar%20stalH%3D%5B0.17%2C0.10%2C0.22%2C0.13%2C0.19%2C0.09%2C0.16%5D%3Bfunction%20rrect(x%2Cy%2Cw%2Ch%2Cr)%7Bctx.beginPath()%3Bctx.moveTo(x%2Br%2Cy)%3Bctx.arcTo(x%2Bw%2Cy%2Cx%2Bw%2Cy%2Bh%2Cr)%3Bctx.arcTo(x%2Bw%2Cy%2Bh%2Cx%2Cy%2Bh%2Cr)%3Bctx.arcTo(x%2Cy%2Bh%2Cx%2Cy%2Cr)%3Bctx.arcTo(x%2Cy%2Cx%2Bw%2Cy%2Cr)%3Bctx.closePath()%3B%7Dfunction%20drawBackground()%7Bvar%20bg%3Dctx.createLinearGradient(0%2CH%2C0%2C0)%3Bbg.addColorStop(0%2C'rgba(58%2C37%2C16%2C1.0)')%3Bbg.addColorStop(0.2%2C'rgba(35%2C21%2C8%2C0.95)')%3Bbg.addColorStop(0.5%2C'rgba(10%2C6%2C4%2C0.8)')%3Bbg.addColorStop(0.65%2C'rgba(10%2C6%2C4%2C0)')%3Bctx.fillStyle%3Dbg%3Bctx.fillRect(0%2C0%2CW%2CH)%3Bctx.fillStyle%3D'rgba(114%2C64%2C24%2C0.8)'%3Bctx.beginPath()%3Bctx.ellipse(CX%2CGROUND_Y%2CMath.round(ARM_LEN*1.15)%2CYPERSP%2C0%2C0%2CMath.PI*2)%3Bctx.fill()%3B%5BtlX%2CtrX%5D.forEach(function(tx)%7Bvar%20glow%3Dctx.createRadialGradient(tx%2CtorchY%2C0%2Ctx%2CtorchY%2CMath.round(capstanScaleRef*0.15))%3Bglow.addColorStop(0%2C'rgba(255%2C102%2C0%2C0.25)')%3Bglow.addColorStop(1%2C'rgba(255%2C102%2C0%2C0)')%3Bctx.fillStyle%3Dglow%3Bctx.beginPath()%3Bctx.ellipse(tx%2CtorchY%2CMath.round(capstanScaleRef*0.15)%2CMath.round(PANEL_H*0.30)%2C0%2C0%2CMath.PI*2)%3Bctx.fill()%3Bctx.fillStyle%3D'%235c3a18'%3Bctx.fillRect(tx-3%2CtorchY%2B12%2C6%2CMath.round(PANEL_H*0.10))%3B%7D)%3B%7Dfunction%20drawAxis()%7Bctx.save()%3Bctx.globalAlpha%3D0.4%3Bctx.fillStyle%3D'%23000'%3Bctx.beginPath()%3Bctx.ellipse(CX%2CGROUND_Y%2B2%2CMath.round(AX_W*0.9)%2CMath.max(4%2CMath.round(AX_W*0.28))%2C0%2C0%2CMath.PI*2)%3Bctx.fill()%3Bctx.restore()%3Bvar%20topY%3DaxisTopY%3Bvar%20fadeLen%3DMath.round(PANEL_H*0.2)%3Bvar%20gradBase%3Dctx.createLinearGradient(0%2CtopY%2C0%2CtopY%2BfadeLen)%3BgradBase.addColorStop(0%2C'rgba(74%2C48%2C21%2C0)')%3BgradBase.addColorStop(1%2C'rgba(74%2C48%2C21%2C1)')%3Bctx.fillStyle%3DgradBase%3Brrect(CX-AX_W%2F2%2CtopY%2CAX_W%2CaxisBotY-topY%2CMath.round(AX_W*0.2))%3Bctx.fill()%3Bvar%20gradHigh%3Dctx.createLinearGradient(0%2CtopY%2B10%2C0%2CtopY%2B10%2BfadeLen)%3BgradHigh.addColorStop(0%2C'rgba(122%2C80%2C32%2C0)')%3BgradHigh.addColorStop(1%2C'rgba(122%2C80%2C32%2C1)')%3Bctx.fillStyle%3DgradHigh%3Brrect(CX-AX_W%2F2%2B2%2CtopY%2B10%2CMath.max(3%2CMath.round(AX_W*0.22))%2CaxisBotY-topY-20%2C2)%3Bctx.fill()%3B%7Dfunction%20drawPerson(tipX%2CtipY%2Calpha%2CsinA%2Cstride%2Cimg)%7Bvar%20R%3DPR*1.5%3Bvar%20rArm%3DR*0.28%3Bvar%20rLeg%3DR*0.26%3Bvar%20rTorso%3DR*0.38%3Bvar%20rBall%3DR*0.32%3Bvar%20FRONT%3D'%23ddd4a8'%3Bvar%20BACK%3D'%23a09060'%3Bvar%20BALL%3D'%23c8bc88'%3Bvar%20shX%3D1.80%2CshY%3D-0.20%3Bvar%20elX%3D0.90%2CelY%3D-0.10%3Bvar%20nkX%3D2.00%2CnkY%3D-0.30%3Bvar%20hdX%3D1.40%2ChdY%3D-0.70%3Bvar%20hpX%3D3.20%2ChpY%3D0.40%3Bvar%20gnd%3DMath.max(1.2%2CMath.min(2.8%2C(GROUND_Y-tipY)%2FR))%3Bvar%20walkPhase%3DtotalAngle*12.0%3Bvar%20cosW%3DMath.cos(walkPhase)%3Bvar%20knX_A%3D3.00%2B0.80*cosW%3Bvar%20ftX_A%3D3.30%2B0.90*cosW%3Bvar%20kY_A%3Dgnd*0.58%2B0.10*cosW%3Bvar%20gnd_A%3Dgnd%2B0.12*Math.min(0%2CcosW)%3Bvar%20knX_B%3D3.00-0.80*cosW%3Bvar%20ftX_B%3D3.30-0.90*cosW%3Bvar%20kY_B%3Dgnd*0.58-0.10*cosW%3Bvar%20gnd_B%3Dgnd%2B0.12*Math.min(0%2C-cosW)%3Bvar%20farKnX%2CfarFtX%2CfarKY%2CfarGnd%3Bvar%20nearKnX%2CnearFtX%2CnearKY%2CnearGnd%3Bif(cosW%3E%3D0)%7BnearKnX%3DknX_A%3BnearFtX%3DftX_A%3BnearKY%3DkY_A%3BnearGnd%3Dgnd_A%3BfarKnX%3DknX_B%3BfarFtX%3DftX_B%3BfarKY%3DkY_B%3BfarGnd%3Dgnd_B%3B%7Delse%7BnearKnX%3DknX_B%3BnearFtX%3DftX_B%3BnearKY%3DkY_B%3BnearGnd%3Dgnd_B%3BfarKnX%3DknX_A%3BfarFtX%3DftX_A%3BfarKY%3DkY_A%3BfarGnd%3Dgnd_A%3B%7Dvar%20scaleX%3DsinA%3Bif(Math.abs(scaleX)%3C0.15)%7BscaleX%3DscaleX%3E%3D0%3F0.15%3A-0.15%3B%7Dctx.save()%3Bctx.globalAlpha%3Dalpha%3Bctx.translate(tipX%2CtipY)%3Bctx.scale(scaleX%2C1)%3Bctx.lineCap%3D'round'%3Bfunction%20px(x)%7Breturn%20x*R%3B%7Dfunction%20py(y)%7Breturn%20y*R%3B%7Dfunction%20cyl(x1%2Cy1%2Cx2%2Cy2%2Cr%2Ccol)%7Bctx.strokeStyle%3Dcol%3Bctx.lineWidth%3Dr*2%3Bctx.beginPath()%3Bctx.moveTo(px(x1)%2Cpy(y1))%3Bctx.lineTo(px(x2)%2Cpy(y2))%3Bctx.stroke()%3B%7Dfunction%20ball(x%2Cy%2Cr%2Ccol)%7Bctx.fillStyle%3Dcol%3Bctx.beginPath()%3Bctx.arc(px(x)%2Cpy(y)%2Cr%2C0%2CMath.PI*2)%3Bctx.fill()%3B%7Dcyl(hpX%2ChpY%2CfarKnX%2CfarKY%2CrLeg%2CBACK)%3Bcyl(farKnX%2CfarKY%2CfarFtX%2CfarGnd%2CrLeg*0.88%2CBACK)%3Bball(farKnX%2CfarKY%2CrBall*0.85%2CBACK)%3Bball(farFtX%2CfarGnd%2CrBall*0.72%2CBACK)%3Bcyl(shX%2B0.18%2CshY-0.10%2CelX%2B0.18%2CelY-0.10%2CrArm%2CBACK)%3Bcyl(elX%2B0.18%2CelY-0.10%2C0.18%2C-0.10%2CrArm*0.88%2CBACK)%3Bcyl(nkX%2CnkY%2ChpX%2ChpY%2CrTorso%2CFRONT)%3Bball(hpX%2ChpY%2CrBall*1.20%2CBALL)%3Bctx.restore()%3Bctx.save()%3Bctx.globalAlpha%3Dalpha%3Bctx.strokeStyle%3D'%23a07840'%3Bctx.lineWidth%3DMath.max(6%2CMath.round(AX_W*0.4))%3Bctx.lineCap%3D'round'%3Bctx.beginPath()%3Bctx.moveTo(CX%2CCY)%3Bctx.lineTo(tipX%2CtipY)%3Bctx.stroke()%3Bctx.restore()%3Bctx.save()%3Bctx.globalAlpha%3Dalpha%3Bctx.translate(tipX%2CtipY)%3Bctx.scale(scaleX%2C1)%3Bctx.lineCap%3D'round'%3Bcyl(shX%2CshY%2CelX%2CelY%2CrArm%2CFRONT)%3Bcyl(elX%2CelY%2C0%2C0%2CrArm*0.88%2CFRONT)%3Bball(shX%2CshY%2CrBall%2CBALL)%3Bball(elX%2CelY%2CrBall*0.88%2CBALL)%3Bball(0%2C0%2CrBall*0.80%2CBALL)%3Bcyl(hpX%2ChpY%2CnearKnX%2CnearKY%2CrLeg%2CFRONT)%3Bcyl(nearKnX%2CnearKY%2CnearFtX%2CnearGnd%2CrLeg*0.88%2CFRONT)%3Bball(nearKnX%2CnearKY%2CrBall*0.90%2CBALL)%3Bball(nearFtX%2CnearGnd%2CrBall*0.78%2CBALL)%3Bctx.save()%3Bctx.beginPath()%3Bctx.arc(px(hdX)%2Cpy(hdY)%2CR%2C0%2CMath.PI*2)%3Bctx.clip()%3Bif(img%26%26img.complete%26%26img.naturalWidth)%7Btry%7Bctx.drawImage(img%2Cpx(hdX)-R%2Cpy(hdY)-R%2CR*2%2CR*2)%3B%7Dcatch(e)%7Bctx.fillStyle%3DFRONT%3Bctx.fill()%3B%7D%7Delse%7Bctx.fillStyle%3DFRONT%3Bctx.fill()%3B%7Dctx.restore()%3Bctx.restore()%3B%7Dfunction%20drawOverlay(flameF)%7B%5BtlX%2CtrX%5D.forEach(function(tx)%7Bvar%20ry%3DMath.round(fRY*flameF)%3Bvar%20rx%3DMath.round(fRX*(1.2-flameF*0.2))%3Bvar%20gr%3Dctx.createRadialGradient(tx%2CtorchY%2C0%2Ctx%2CtorchY%2CMath.max(rx%2Cry)*1.5)%3Bgr.addColorStop(0%2C'%23ffff99')%3Bgr.addColorStop(0.45%2C'%23ff7700')%3Bgr.addColorStop(1%2C'rgba(255%2C34%2C0%2C0)')%3Bctx.fillStyle%3Dgr%3Bctx.beginPath()%3Bctx.ellipse(tx%2CtorchY%2Crx%2Cry%2C0%2C0%2CMath.PI*2)%3Bctx.fill()%3B%7D)%3B%7Dfunction%20drawFrame(dispAngle%2Cstride)%7Bctx.clearRect(0%2C0%2CW%2CH)%3Bctx.save()%3BdrawBackground()%3Bvar%20order%3D%5B%5D%3Bfor(var%20n%3D0%3Bn%3CARM_COUNT%3Bn%2B%2B)%7Bvar%20a%3DdispAngle%2B(n%2FARM_COUNT)*Math.PI*2%3Bvar%20sinA%3DMath.sin(a)%2CcosA%3DMath.cos(a)%3Bvar%20depth%3D1.0%3Border.push(%7Bidx%3An%2CsinA%3AsinA%2CcosA%3AcosA%2CtipX%3ACX%2BARM_LEN*cosA%2CtipY%3ACY%2BYPERSP*sinA%2Cdepth%3Adepth%7D)%3B%7Dorder.sort(function(a%2Cb)%7Breturn%20a.sinA-b.sinA%3B%7D)%3Border.forEach(function(d)%7Bif(d.sinA%3E0)return%3BdrawPerson(d.tipX%2Cd.tipY%2Cd.depth%2Cd.sinA%2Cstride%2Cimgs%5Bd.idx%5D)%3B%7D)%3BdrawAxis()%3Border.forEach(function(d)%7Bif(d.sinA%3C%3D0)return%3BdrawPerson(d.tipX%2Cd.tipY%2Cd.depth%2Cd.sinA%2Cstride%2Cimgs%5Bd.idx%5D)%3B%7D)%3BdrawOverlay(0.80%2BMath.random()*0.40)%3Bctx.restore()%3B%7Dvar%20totalAngle%3DMath.PI*0.3%2Cstride%3D0%2CrafId%3Bvar%20isScrolling%3Dfalse%3Bvar%20scrollTimeout%3Dnull%3Bvar%20lastScrollY%3Dwindow.scrollY%3Bvar%20avatarQueue%3D%5B%5D%3Bvar%20lastScrollCheckTime%3D0%3Bfunction%20scrollHandler()%7Bif(!isIntroFinished)return%3Bvar%20currentScrollY%3Dwindow.scrollY%3Bvar%20delta%3DcurrentScrollY-lastScrollY%3Bif(delta%3E8)%7BisScrolling%3Dtrue%3Bif(scrollTimeout)clearTimeout(scrollTimeout)%3BscrollTimeout%3DsetTimeout(function()%7BisScrolling%3Dfalse%3B%7D%2C150)%3Bvar%20now%3DDate.now()%3Bif(now-lastScrollCheckTime%3E150)%7BlastScrollCheckTime%3Dnow%3BcheckSelfAvatar()%3Bvar%20targetEl%3Ddocument.elementFromPoint(W%2F2%2CH%2F2)%3Bif(targetEl)%7Bvar%20parent%3DtargetEl%3Bvar%20foundImg%3Dnull%3Bwhile(parent%26%26parent!%3D%3Ddocument.body)%7Bvar%20testId%3Dparent.getAttribute%3Fparent.getAttribute('data-testid')%3Anull%3Bvar%20role%3Dparent.getAttribute%3Fparent.getAttribute('role')%3Anull%3Bvar%20isFeedItem%3DtestId%26%26(testId.indexOf('feedItem-')%3D%3D%3D0%7C%7CtestId%3D%3D%3D'postThreadItem'%7C%7CtestId.indexOf('notification')!%3D%3D-1)%3Bvar%20isSearchItem%3D(role%3D%3D%3D'link')%3Bif(isFeedItem%7C%7CisSearchItem)%7Bvar%20img%3Dparent.querySelector('%5Bdata-testid%3D%22userAvatarImage%22%5D%20img')%3Bif(img)%7BfoundImg%3Dimg%3Bbreak%3B%7D%7Dparent%3Dparent.parentNode%3B%7Dif(foundImg%26%26foundImg.src)%7Bif(!seen.has(foundImg.src)%26%26(!selfSrc%7C%7CfoundImg.src!%3D%3DselfSrc))%7Bif(isTimelineAvatar(foundImg))%7Bseen.add(foundImg.src)%3BavatarQueue.push(foundImg.src)%3B%7D%7D%7D%7D%7DlastScrollY%3DcurrentScrollY%3B%7Delse%20if(delta%3C0)%7BisScrolling%3Dfalse%3Bif(scrollTimeout)clearTimeout(scrollTimeout)%3BlastScrollY%3DcurrentScrollY%3B%7D%7Dwindow.addEventListener('scroll'%2CscrollHandler)%3Bvar%20stepSpeed%3D0.00405%3Bvar%20introStartTime%3Dnull%3Bfunction%20animate(ts)%7BcheckSelfAvatar()%3Bif(!isIntroFinished)%7Bif(!introStartTime)introStartTime%3Dts%3Bvar%20elapsed%3Dts-introStartTime%3Bif(elapsed%3C1000)%7Bif(!phaseTriggered.p1)%7BphaseTriggered.p1%3Dtrue%3BfreezeFixedElements()%3Bif(rootEl)%7BrootEl.style.filter%3D'url(%23chika-distort-filter)'%3B%7D%7Dvar%20progressDistort%3Delapsed%2F1200%3Bvar%20pValDistort%3DeaseInQuad(progressDistort)%3Bvar%20dmEl%3Ddocument.getElementById('chika-displace-map')%3Bif(dmEl)%7BdmEl.setAttribute('scale'%2C(pValDistort*240).toString())%3B%7Dvar%20blurEl%3Ddocument.getElementById('chika-blur-filter')%3Bif(blurEl)%7BblurEl.setAttribute('stdDeviation'%2C(pValDistort*1.2).toString())%3B%7Dif(rootEl)%7BrootEl.style.transformOrigin%3D'center%20bottom'%3BrootEl.style.transition%3D'none'%3BrootEl.style.transform%3D'scale('%2B(1.0%2B0.08*pValDistort)%2B')'%3B%7Dif(maskEl)%7BmaskEl.style.opacity%3D'0'%3B%7D%7Delse%20if(elapsed%3C2000)%7Bif(!phaseTriggered.p2)%7BphaseTriggered.p2%3Dtrue%3BspeedCanvas.style.display%3D'block'%3BspeedCanvas.style.opacity%3D'1'%3B%7Dvar%20scaleVal%3D240%3Bvar%20blurVal%3D1.2%3Bvar%20scale2D%3D1.08%3Bif(elapsed%3C1200)%7Bvar%20progressDistort%3Delapsed%2F1200%3Bvar%20pValDistort%3DeaseInQuad(progressDistort)%3BscaleVal%3DpValDistort*240%3BblurVal%3DpValDistort*1.2%3Bscale2D%3D1.0%2B0.08*pValDistort%3B%7Dvar%20dmEl%3Ddocument.getElementById('chika-displace-map')%3Bif(dmEl)%7BdmEl.setAttribute('scale'%2CscaleVal.toString())%3B%7Dvar%20blurEl%3Ddocument.getElementById('chika-blur-filter')%3Bif(blurEl)%7BblurEl.setAttribute('stdDeviation'%2CblurVal.toString())%3B%7Dvar%20progressMove%3D(elapsed-1000)%2F1000%3Bvar%20pValMove%3DeaseInQuad(progressMove)%3Bif(rootEl)%7BrootEl.style.opacity%3D(1.0-progressMove).toString()%3BrootEl.style.transform%3D'translateY('%2B(-H*pValMove)%2B'px)scale('%2Bscale2D%2B')'%3B%7Dif(maskEl)%7BmaskEl.style.opacity%3DprogressMove.toString()%3B%7Dvar%20progressLine%3D(elapsed-1000)%2F3000%3BdrawSpeedLines(progressLine%2CprogressMove)%3B%7Delse%20if(elapsed%3C3000)%7Bif(!phaseTriggered.p3)%7BphaseTriggered.p3%3Dtrue%3Bif(rootEl)%7BrootEl.style.visibility%3D'hidden'%3BrootEl.style.opacity%3DorigOpacity%3BrootEl.style.filter%3DorigFilter%3BrootEl.style.transform%3DorigTransform%3B%7Dif(maskEl)%7BmaskEl.style.opacity%3D'1.0'%3B%7D%7Dvar%20progressLine%3D(elapsed-1000)%2F3000%3BdrawSpeedLines(progressLine%2C1.0)%3B%7Delse%20if(elapsed%3C4000)%7Bvar%20progress%3D(elapsed-3000)%2F1000%3Bvar%20pEase%3DeaseOutCubic(progress)%3Bif(!phaseTriggered.p4)%7BphaseTriggered.p4%3Dtrue%3Bif(rootEl)%7BrootEl.style.visibility%3DorigVisibility%3BrootEl.style.transformOrigin%3D'center%20bottom'%3BrootEl.style.transition%3D'none'%3B%7Dcanvas.style.display%3D'block'%3Bcanvas.style.transition%3D'none'%3B%7Dif(maskEl)%7BmaskEl.style.opacity%3D(1.0-(1.0-0.55)*pEase).toString()%3B%7Dvar%20ty%3DH*(1.0-pEase)%3Bif(rootEl)%7BrootEl.style.opacity%3Dprogress.toString()%3BrootEl.style.transform%3D'translateY('%2Bty%2B'px)'%3B%7Dcanvas.style.opacity%3Dprogress.toString()%3Bcanvas.style.transform%3D'translateY('%2Bty%2B'px)'%3BdrawFrame(totalAngle%2Cstride)%3Bvar%20progressLine%3D(elapsed-1000)%2F3000%3BdrawSpeedLines(progressLine%2C1.0-progress)%3B%7Delse%7Bif(!phaseTriggered.finished)%7BphaseTriggered.finished%3Dtrue%3BisIntroFinished%3Dtrue%3BunfreezeFixedElements()%3Bif(rootEl)%7BrootEl.style.transition%3DorigTransition%3BrootEl.style.transform%3DorigTransform%3BrootEl.style.filter%3DorigFilter%3BrootEl.style.transformOrigin%3DorigTransformOrigin%3BrootEl.style.opacity%3DorigOpacity%3BrootEl.style.display%3DorigDisplay%3BrootEl.style.visibility%3DorigVisibility%3B%7Dcanvas.style.transition%3D''%3Bcanvas.style.transform%3D''%3Bcanvas.style.opacity%3D'1'%3BspeedCanvas.style.display%3D'none'%3BspeedCanvas.remove()%3Bif(maskEl)%7BmaskEl.style.opacity%3D'0.55'%3B%7D%7DrunNormalFrame()%3B%7D%7Delse%7BrunNormalFrame()%3B%7DrafId%3DrequestAnimationFrame(animate)%3B%7Dfunction%20runNormalFrame()%7Bvar%20prevAngleLocal%3DtotalAngle%3Bif(isScrolling%26%26isIntroFinished)%7BtotalAngle%2B%3DstepSpeed%3B%7Dif(avatarQueue.length%3E0)%7Bfor(var%20n%3D0%3Bn%3CARM_COUNT%3Bn%2B%2B)%7Bif(n%3D%3D%3D0)continue%3Bvar%20a%3DtotalAngle%2B(n%2FARM_COUNT)*Math.PI*2%3Bvar%20aMod%3Da%20%25(Math.PI*2)%3Bif(imgs%5Bn%5D%3D%3D%3Dnull%26%26aMod%3E%3D0%26%26aMod%3C%3DMath.PI*0.3%26%26isScrolling%26%26isIntroFinished)%7Bif(avatarQueue.length%3E0)%7Bvar%20nextSrc%3DavatarQueue.shift()%3B(function(targetIndex)%7Bvar%20newImg%3Dnew%20Image()%3BnewImg.onload%3Dfunction()%7Bimgs%5BtargetIndex%5D%3DnewImg%3B%7D%3BnewImg.src%3DnextSrc%3B%7D)(n)%3B%7Dcontinue%3B%7Dvar%20prevA%3DprevAngleLocal%2B(n%2FARM_COUNT)*Math.PI*2%3Bvar%20currA%3DtotalAngle%2B(n%2FARM_COUNT)*Math.PI*2%3Bif(isScrolling%26%26isIntroFinished%26%26Math.floor(prevA%2F(Math.PI*2))%3CMath.floor(currA%2F(Math.PI*2)))%7Bif(avatarQueue.length%3E0)%7Bvar%20nextSrc%3DavatarQueue.shift()%3B(function(targetIndex)%7Bvar%20newImg%3Dnew%20Image()%3BnewImg.onload%3Dfunction()%7Bimgs%5BtargetIndex%5D%3DnewImg%3B%7D%3BnewImg.src%3DnextSrc%3B%7D)(n)%3B%7D%7D%7D%7DdrawFrame(totalAngle%2Cstride)%3B%7DrafId%3DrequestAnimationFrame(animate)%3Bwindow%5BKEY%5D%3Dfunction()%7BcancelAnimationFrame(rafId)%3Bwindow.removeEventListener('resize'%2ChandleResize)%3Bwindow.removeEventListener('scroll'%2CscrollHandler)%3Bif(scrollTimeout)clearTimeout(scrollTimeout)%3Bcanvas.remove()%3Bif(typeof%20speedCanvas!%3D%3D'undefined'%26%26speedCanvas)speedCanvas.remove()%3Bif(rootEl)%7BrootEl.style.transition%3DorigTransition%3BrootEl.style.transform%3DorigTransform%3BrootEl.style.filter%3DorigFilter%3BrootEl.style.transformOrigin%3DorigTransformOrigin%3BrootEl.style.opacity%3DorigOpacity%3BrootEl.style.display%3DorigDisplay%3BrootEl.style.visibility%3DorigVisibility%3B%7Dif(svgFilter)%7BsvgFilter.remove()%3B%7Dif(maskEl)%7BmaskEl.remove()%3BmaskEl%3Dnull%3B%7D%7D%3B%7D)()%3B"><span>地下ブルースカイ</span><span>v1</span></a>
+    <p style="margin-top: 0.8rem; color: #a05028; font-size: 0.85rem; text-align: center;">このボタンをドラッグ＆ドロップしてね</p>
+  </div>
+
+  <hr class="divider">
+
+  <footer>
+    <a href="https://github.com/girigiribauer/underground-bluesky">GitHub</a>
+  </footer>
+</div>
+</body>
+</html>

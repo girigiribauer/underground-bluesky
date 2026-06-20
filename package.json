@@ -1,0 +1,9 @@
+{
+  "name": "underground-bluesky",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "serve": "node build.js && node serve.js"
+  }
+}
